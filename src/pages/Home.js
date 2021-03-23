@@ -16,7 +16,7 @@ function Home() {
   return (
     <Grid columns={3}>
       <Grid.Row className="page-title">
-        <h1>Latest Posts</h1>
+        <h1>Latest Posts:</h1>
       </Grid.Row>
       <Grid.Row>
         {user && (
