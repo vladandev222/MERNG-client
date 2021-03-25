@@ -23,8 +23,8 @@ function Register(props) {
       props.history.push("/");
     },
     onError(err) {
-      setErrors(err.graphQLErrors[0].extensions.exception.errors);
-      // console.log(err);
+      err.graphQLErrors[0].extensions.exception && setErrors(err.graphQLErrors[0].extensions.exception.errors);
+      (!err.graphQLErrors[0].extensions.exception && err.graphQLErrors[0].extensions.code) && setErrors({error: `${err.graphQLErrors[0].extensions.code}: ${err.graphQLErrors[0].message}`});
     },
     variables: values,
   });
